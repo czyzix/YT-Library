@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>MyVideoLibrary</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <img src="img/logo.png" />
+            <div class="searchWrapper" data-search>
+                <label for="search">Search Video</label>
+                <input type="search" id="search">
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="mainSection">
+            <div>
+                <h1 class="headline">My <span class="tube">YouTube</span>Resource Gallery</h1>
+                <p>My app to keep all the knowledge from fronted YouTube videos while learning to code.</p>
+            </div>
+        
+                <form class="formX">
+                    <label for="videoId">Video ID</label>
+                    <input type="text" name="videoId" id="videoId" placeholder="Video ID here..." required>
+                    <label for="videoId">Title</label>
+                    <input type="text" name="videoTitle" id="videoTitle" placeholder="Title here..." required>
+                    <label for="videoId">Notes</label>
+                    <textarea name="note" id="note" placeholder="My notes..." maxlength="100" onkeyup="count(this)"></textarea>
+                    <div id="the-count">
+                        <span id="current">0</span>
+                        <span id="maximum">/ 100</span>
+                      </div>
+                    <button id="btn">SAVE</button>
+                </form>
+        </div>
+
+        <ul id="videosContainer">
+
+        </ul>
+    </div>
+
+    <div id="videoPopup"  onclick="closeVideoPopup()" class="closed">
+        <iframe
+          width="560" height="315" 
+          frame-border="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          ></iframe>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
