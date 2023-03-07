@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>MyVideoLibrary</title>
+</head>
+<body>
+        <header>
+            <nav id="navbar">
+                <img src="img/logo.png" />
+                
+            </nav>
+        </header>
+
+        <div class="main-container">
+
+            <div class="headline">
+                <h1>YouTube Resource Library</h1>
+                <p>My app which will help you keep all the knowledge from frontend world in your personal YouTube video library</p>
+            </div>
+
+            <h2>ADD VIDEO</h2>
+            <div class="form-container">
+                    <form class="form" id="form">
+                        <label for="videoId">Video ID</label>
+                        <input type="text" name="videoId" id="videoId" placeholder="Video ID here..." minlength="11" required >
+                        <label for="videoId">Title</label>
+                        <input type="text" name="videoTitle" id="videoTitle" placeholder="Title here..." minlength="5" required>
+                        <label for="videoId">Notes</label>
+                        <textarea name="note" id="note" placeholder="My notes..." maxlength="100" onkeyup="count(this)"></textarea>
+                        <div id="the-count">
+                            <span id="current">0</span>
+                            <span id="maximum">/ 100</span>
+                        </div>
+                        <button id="btn">SAVE</button>
+                    </form>
+            </div>
+
+            <h2>ALL VIDEOS</h2>
+            <div class="searchWrapper" data-search>
+                <label for="search">Search</label>
+                <input type="search" id="search">
+            </div>
+
+            <ul id="videosContainer">
+            </ul>
+        
+        </div>
+
+        <div id="videoPopup"  onclick="closeVideoPopup()" class="closed">
+            <iframe
+            width="560" height="315" 
+            frame-border="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            ></iframe>
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
